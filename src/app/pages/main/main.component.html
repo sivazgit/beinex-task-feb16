@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>XYZ Employee Portal</h2>
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10 col-sm-12">
+            <div id="left"></div>
+            <div id="right">
+                <h5>Hey There! Sign up here...</h5>
+                <form #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm.value)">
+                    <div class="inp"><input type="text" required name="name" #name="ngModel" ngModel placeholder="Name" class="form-control"></div>
+                    <div class="warning" *ngIf="name.touched && name.invalid">Name is required</div>
+
+                    <div class="inp"><textarea required name="address"  #address="ngModel" ngModel id="" cols="35" rows="5" placeholder="Address" class="form-control" style="width:300px;height: 80px;"></textarea></div>
+
+                    <div class="inp"><input type="date" required name="dob" #dob="ngModel" ngModel class="form-control"></div>
+
+                    <div class="inp"><input type="email" required name="email" #email="ngModel" ngModel placeholder="Email" class="form-control"></div>
+                    
+
+                    <div class="inp"><input type="password" required name="password" #password="ngModel" ngModel placeholder="Password" class="form-control"></div>
+                   
+
+                    <div class="inp"><input type="tel" required  pattern="[0-9]"  maxlength="10" name="phone" ngModel #phone="ngModel"  placeholder="Phone number" class="form-control"></div>
+                    <div class="warning" *ngIf="phone.touched && phone.invalid">Invalid Phone number</div>
+
+                    <div class="inp"><input type="text" required pattern="[0-9]" maxlength="6"  name="pin" ngModel #pin="ngModel"  placeholder="Pincode" class="form-control"></div>
+                    <div class="warning" *ngIf="pin.touched && pin.invalid">Invalid pin</div>
+
+
+                    <div class="inp"><input type="text" required name="state" #state="ngModel" ngModel placeholder="State" class="form-control"></div>
+                    
+                    <div class="inp"><input type="text" required name="country" #country="ngModel" ngModel placeholder="Country" class="form-control"></div>
+            
+                    <button class="btn btn-warning">Add Employee</button>
+                </form>
+            </div>
+        
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+</div>
